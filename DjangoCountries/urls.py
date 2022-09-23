@@ -18,7 +18,8 @@ from django.urls import path
 from MainApp import views
 
 urlpatterns = [
-    path('', views.main_page),
+    # Для корневого url тоже стоит дать имя и использовать его в шаблонах
+    path('', views.main_page, name='home'),
     path('countries-list', views.countries_page, name='countries-list'),
     path('languages', views.languages_page, name='languages'),
     path('country/<str:country_param>/', views.country_page, name='country'),
@@ -26,3 +27,6 @@ urlpatterns = [
     path('countries-language-list/<str:language_country_param>/', views.countries_language_page, name='countries-language-list'),
 ]
 
+# Вы сгенерировали большущий .gitignore, но толку от него мало:
+# 1. Виртуальное окружение не должно быть часть репозитория
+# 2. Настройки PyCharm(.idea) также ошибочно были затянуты в репозиторий

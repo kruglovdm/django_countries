@@ -30,6 +30,8 @@ def countries_page(request):
 
 
 def languages_page(request):
+    # Теоретически вставлять сырые SQL допустимо, но стоит этого избегать, если есть готовое решение в ORM:
+    # https://docs.djangoproject.com/en/dev/ref/models/querysets/#distinct
     sample = LanguagesCountries.objects.raw("SELECT * FROM MainApp_languagescountries DIFFIRENT")
 
     context = {
@@ -41,6 +43,7 @@ def languages_page(request):
 
 
 def country_page(request, country_param):
+    # Тут нужно добавить обработку исключения(DoesNotExist), если страна с именем country_param не существует в БД
     res_country = Country.objects.get(name=country_param)
     res_languagescountries = LanguagesCountries.objects.filter(country=res_country)
 
