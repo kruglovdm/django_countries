@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = ''
+# Пока не вникал почему, но ваш проект при старте требует "НЕ пустой SECRET_KEY"
+SECRET_KEY = 'my_secret-key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

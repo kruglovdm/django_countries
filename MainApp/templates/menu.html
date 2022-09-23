@@ -6,8 +6,10 @@
     <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'countries-list' %}">Список стран</a></li>
     <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'languages' %}">Язык</a></li>
 {% elif h == "countries" %}
+      {# Вы везде используете именованные url, кроме корневого(/), а зря. Нет гарантии, что корневой url не изменится #}
     <li class="breadcrumb-item active" aria-current="page"><a href="/"><b>Главная</b></a></li>
     <li class="breadcrumb-item" aria-current="page">Список стран</li>
+      {# Может это звучит как придирка, но все же вместо "Язык" --> "Языки" #}
     <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'languages' %}">Язык</a></li>
 {% elif h == "languages" %}
     <li class="breadcrumb-item active" aria-current="page"><a href="/"><b>Главная</b></a></li>
