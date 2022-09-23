@@ -1,0 +1,22 @@
+ <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+{% if h == "Home" %}
+    <li class="breadcrumb-item" aria-current="page">Главная</li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'countries-list' %}">Список стран</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'languages' %}">Язык</a></li>
+{% elif h == "countries" %}
+    <li class="breadcrumb-item active" aria-current="page"><a href="/"><b>Главная</b></a></li>
+    <li class="breadcrumb-item" aria-current="page">Список стран</li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'languages' %}">Язык</a></li>
+{% elif h == "languages" %}
+    <li class="breadcrumb-item active" aria-current="page"><a href="/"><b>Главная</b></a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'countries-list' %}">Список стран</a></li>
+    <li class="breadcrumb-item" aria-current="page">Язык</li>
+{% else %}
+    <li class="breadcrumb-item active" aria-current="page"><a href="/">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'countries-list' %}">Список стран</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'languages' %}">Язык</a></li>
+{% endif %}
+  </ol>
+</nav>

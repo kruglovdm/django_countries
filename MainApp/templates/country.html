@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'menu.html' %}
+<h2>{{country}}</h2>
+<ul>
+    {% for el in languages %}
+    <li>{{el.languages}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

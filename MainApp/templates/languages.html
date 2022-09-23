@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'menu.html' %}
+<ol>
+    {% for el in page_obj %}
+    <li><a href="{% url 'countries-language-list' language_country_param=el.languages %}">{{el.languages}}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{h}}</title>
+    {% block style %}
+        {# Это общая css для всех страниц #}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        {# Но каждая страница может содержать доп.уникальные css #}
+    {% endblock %}
+</head>
+<body>
+<header>
+    <h1>DjangoCountries</h1>
+</header>
+<main>
+    {#  Содержимое этого блока уникально на каждой странице #}
+    {% block content %}
+    {% endblock %}
+</main>
+<footer class="footer">
+</footer>
+</body>
+</html>
